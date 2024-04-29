@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../../../fundamentos"
+	},
+	{
+		"path": "../.."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "blog-pessoal"
+  }
+}
