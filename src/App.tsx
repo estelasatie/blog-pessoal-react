@@ -1,33 +1,56 @@
-import React from 'react';
+
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
 import './App.css';
-
-import Navbar from './components/navBar/navBar.tsx';
-import Footer from './components/footer/footer.tsx';
+import 'react-toastify/dist/ReactToastify.css';
+import Login from './paginas/login/login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './paginas/login/login.tsx';
-import Cadastro from './paginas/cadastro/cadastro.tsx';
-import Home from './paginas/home/Home';
 import { AuthProvider } from './contexts/AuthContext';
+import { ToastContainer } from 'react-toastify';
+import Cadastro from './paginas/cadastro/cadastro';
+import Navbar from './components/navBar/navBar';
+import Home from './paginas/home/Home';
+import Footer from './components/footer/footer';
+import ListaTemas from './components/temas/listaTemas/ListaTemas';
+import FormularioTema from './components/temas/formularioTema/FormularioTema';
+import DeletarTema from './components/temas/deletarTema/DeletarTema';
+import ListaPostagens from './components/postagens/listaPostagens/listaPostagens';
+import FormularioPostagem from './components/postagens/formularioPostagem/formularioPostagem';
 
+import Perfil from './paginas/perfil/perfil';
+import DeletarPostagem from './components/postagens/deletarPostagem/deletarPostagem';
 
 function App() {
+  
   return (
     <>
-    <AuthProvider>
+      <AuthProvider>
+      <ToastContainer />
         <BrowserRouter>
-          <Navbar />
+        <Navbar />
           <div className='min-h-[80vh]'>
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/temas" element={<ListaTemas />} />
+              <Route path="/cadastroTema" element={<FormularioTema />} />
+              <Route path="/editarTema/:id" element={<FormularioTema />} />
+              <Route path="/deletarTema/:id" element={<DeletarTema />} />
+              <Route path="/postagens" element={<ListaPostagens />} />
+              <Route path="/cadastroPostagem" element={<FormularioPostagem />} />
+              <Route path="/editarPostagem/:id" element={<FormularioPostagem />} />
+              <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
+              <Route path="/perfil" element={<Perfil />} />
             </Routes>
           </div>
           <Footer />
         </BrowserRouter>
-        </AuthProvider>
+      </AuthProvider>
     </>
   );
 }
+
 export default App;
