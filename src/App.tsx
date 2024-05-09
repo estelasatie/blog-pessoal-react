@@ -10,7 +10,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { ToastContainer } from 'react-toastify';
 import Cadastro from './pages/Cadastro/Cadastro';
 import Navbar from './components/navbar/navbar';
-import Home from './pages/home/Home';
+import Home from './pages/Home/Home';
 import Footer from './components/footer/footer';
 import ListaTemas from './components/temas/listaTema/listaTema';
 import FormularioTema from './components/temas/formularioTema/formularioTema';
